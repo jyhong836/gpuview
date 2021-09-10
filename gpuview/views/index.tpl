@@ -100,7 +100,10 @@
                                     <td> [{{ gpu.get('index', '') }}] {{ gpu.get('name', '-') }} </td>
                                     <td> {{ gpu.get('temperature.gpu', '-') }}&#8451; </td>
                                     <td> {{ gpu.get('utilization.gpu', '-') }}% </td>
-                                    <td> {{ gpu.get('memory', '-') }}% ({{ gpu.get('memory.used', '') }}/{{ gpu.get('memory.total', '-') }}) </td>
+                                    <td> {{ gpu.get('memory', '-') }}% ({{ gpu.get('memory.used', '') }}/{{ gpu.get('memory.total', '-') }}) 
+                                        <div class="progress"><div class="progress-bar bg-success" role="progressbar" style="width: {{ gpu.get('memory', '-') }}%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </td>
                                     <td> {{ gpu.get('power.draw', '-') }} / {{ gpu.get('enforced.power.limit', '-') }} </td>
                                     <td> {{ gpu.get('user_processes', '-') }} </td>
                                 </tr>
